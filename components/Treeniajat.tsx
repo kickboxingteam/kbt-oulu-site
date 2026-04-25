@@ -1,23 +1,34 @@
 import { Calendar, AlertTriangle } from "lucide-react";
-import { getSchedule, groupByDay } from "@/lib/schedule";
+import { getSchedule, groupByDay, type ScheduleRow } from "@/lib/schedule";
 
-const sportColors: Record<string, string> = {
-  MMA: "bg-[color:var(--color-accent)]/15 text-[color:var(--color-accent)]",
-  Potkunyrkkeily: "bg-amber-500/15 text-amber-300",
-  Thainyrkkeily: "bg-orange-500/15 text-orange-300",
-  BJJ: "bg-emerald-500/15 text-emerald-300",
-};
+const sportKeywords: Array<{ keyword: string; classes: string }> = [
+  { keyword: "MMA", classes: "bg-[color:var(--color-accent)]/15 text-[color:var(--color-accent)]" },
+  { keyword: "Sparri", classes: "bg-rose-500/15 text-rose-300" },
+  { keyword: "Pysty", classes: "bg-amber-500/15 text-amber-300" },
+  { keyword: "Lukkopaini", classes: "bg-emerald-500/15 text-emerald-300" },
+  { keyword: "Matto", classes: "bg-emerald-500/15 text-emerald-300" },
+  { keyword: "Potkunyrkkeily", classes: "bg-amber-500/15 text-amber-300" },
+  { keyword: "Thainyrkkeily", classes: "bg-orange-500/15 text-orange-300" },
+  { keyword: "BJJ", classes: "bg-emerald-500/15 text-emerald-300" },
+];
 
 function colorFor(sport: string): string {
-  const key = Object.keys(sportColors).find((k) =>
-    sport.toLowerCase().includes(k.toLowerCase()),
-  );
-  return key ? sportColors[key] : "bg-white/10 text-white";
+  const s = sport.toLowerCase();
+  const hit = sportKeywords.find((k) => s.includes(k.keyword.toLowerCase()));
+  return hit?.classes ?? "bg-white/10 text-white";
+}
+
+type ColumnKey = keyof Pick<ScheduleRow, "coach" | "hall">;
+
+function hasAnyValue(rows: ScheduleRow[], key: ColumnKey): boolean {
+  return rows.some((r) => r[key] && r[key].trim().length > 0);
 }
 
 export default async function Treeniajat() {
   const schedule = await getSchedule();
   const grouped = groupByDay(schedule.rows);
+  const showCoach = hasAnyValue(schedule.rows, "coach");
+  const showHall = hasAnyValue(schedule.rows, "hall");
 
   return (
     <section id="treeniajat" className="section bg-[color:var(--color-bg-soft)]">
@@ -39,16 +50,18 @@ export default async function Treeniajat() {
 
         <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02]">
           <table className="w-full text-left">
-            <caption className="sr-only">
-              Viikon harjoitusajat lajeittain ja saleittain
-            </caption>
+            <caption className="sr-only">Viikon harjoitusajat lajeittain</caption>
             <thead className="bg-white/[0.04] text-xs uppercase tracking-wider text-[color:var(--color-text-muted)]">
               <tr>
                 <th scope="col" className="px-5 py-4 font-semibold">Päivä</th>
                 <th scope="col" className="px-5 py-4 font-semibold">Aika</th>
                 <th scope="col" className="px-5 py-4 font-semibold">Laji</th>
-                <th scope="col" className="px-5 py-4 font-semibold">Ohjaaja</th>
-                <th scope="col" className="px-5 py-4 font-semibold">Sali</th>
+                {showCoach && (
+                  <th scope="col" className="px-5 py-4 font-semibold">Ohjaaja</th>
+                )}
+                {showHall && (
+                  <th scope="col" className="px-5 py-4 font-semibold">Sali</th>
+                )}
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5">
@@ -68,8 +81,12 @@ export default async function Treeniajat() {
                         {row.sport}
                       </span>
                     </td>
-                    <td className="px-5 py-4 text-[color:var(--color-text-muted)]">{row.coach}</td>
-                    <td className="px-5 py-4 text-[color:var(--color-text-muted)]">{row.hall}</td>
+                    {showCoach && (
+                      <td className="px-5 py-4 text-[color:var(--color-text-muted)]">{row.coach}</td>
+                    )}
+                    {showHall && (
+                      <td className="px-5 py-4 text-[color:var(--color-text-muted)]">{row.hall}</td>
+                    )}
                   </tr>
                 )),
               )}
