@@ -101,6 +101,32 @@ export default function MaksuModal() {
           </dl>
         </section>
 
+        {site.hinnasto.length > 0 && (
+          <section className="mt-6">
+            <p className="eyebrow">Kausimaksut</p>
+            <ul className="mt-3 flex flex-col divide-y divide-white/5 rounded-xl border border-white/10 bg-white/[0.03] px-4">
+              {site.hinnasto.map((tier) => (
+                <li
+                  key={tier.id}
+                  className="flex items-baseline justify-between gap-4 py-3"
+                >
+                  <span className="text-sm text-[color:var(--color-text-muted)]">
+                    {tier.name}
+                    {tier.featured && (
+                      <span className="ml-2 rounded-full bg-[color:var(--color-accent)]/20 px-2 py-0.5 text-xs font-semibold text-[color:var(--color-accent)]">
+                        Suosituin
+                      </span>
+                    )}
+                  </span>
+                  <span className="font-[family-name:var(--font-display)] text-xl tracking-wide text-white">
+                    {tier.price}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {site.peruskurssit.prices.length > 0 && (
           <section className="mt-6">
             <p className="eyebrow">Peruskurssi</p>
