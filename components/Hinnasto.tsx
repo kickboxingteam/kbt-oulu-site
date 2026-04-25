@@ -49,7 +49,7 @@ export default function Hinnasto() {
               <button
                 type="button"
                 onClick={openMaksuModal}
-                className="btn-ghost mt-auto pt-6 w-full"
+                className="btn-ghost mt-6 w-full"
               >
                 Aloita harjoittelu
               </button>
