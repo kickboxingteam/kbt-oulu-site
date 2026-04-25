@@ -74,7 +74,7 @@
       "id": "kausi-2",
       "name": "2 kuukautta",
       "price": "120 €",
-      "perks": ["Rajaton harjoittelu", "Kaikki lajit", "n. 60 € / kk"],
+      "perks": ["Rajaton harjoittelu", "Kaikki lajit", "60 € / kk"],
       "featured": false
     },
     {
@@ -93,10 +93,6 @@
     }
   ],
   "hinnastoNotes": [
-    "Kausimaksulla voit harjoitella rajattomasti kaikissa lajeissa.",
-    "Jäsenmaksu 20 € / vuosi — sisältyy peruskurssin hintaan ensimmäisenä vuonna.",
-    "Kertamaksu 10 € yksittäiseen treeniin (käteisellä paikan päällä).",
-    "Yksityistunneista voi kysyä tarjousta suoraan Lepalta.",
     "Ensimmäiset kaksi tutustumiskertaa ovat aina veloituksetta."
   ],
   "lisamaksut": [
