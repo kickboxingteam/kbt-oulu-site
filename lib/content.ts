@@ -17,7 +17,7 @@ export type Laji = {
 export type Valmentaja = {
   name: string;
   role: string;
-  bio: string;
+  bio: string | string[];
   image?: string;
   instagram?: string;
   instagramHandle?: string;

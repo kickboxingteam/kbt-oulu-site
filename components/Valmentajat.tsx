@@ -13,43 +13,54 @@ export default function Valmentajat() {
           tähän pian.
         </p>
 
-        <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {site.valmentajat.map((v, i) => (
-            <li key={`${v.name}-${i}`} className="card flex gap-4">
-              {v.image ? (
-                <Image
-                  src={v.image}
-                  alt={`${v.name} — ${v.role}`}
-                  width={64}
-                  height={64}
-                  className="h-16 w-16 shrink-0 rounded-full object-cover"
-                />
-              ) : (
-                <span
-                  aria-hidden="true"
-                  className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white/5 text-[color:var(--color-text-muted)]"
-                >
-                  <UserRound size={28} />
-                </span>
-              )}
-              <div className="min-w-0">
-                <h3 className="text-lg font-semibold text-white">{v.name}</h3>
-                <p className="text-sm text-[color:var(--color-accent)]">{v.role}</p>
-                <p className="mt-2 text-sm text-[color:var(--color-text-muted)]">{v.bio}</p>
+        <ul className="mt-12 grid gap-6 sm:grid-cols-2">
+          {site.valmentajat.map((v, i) => {
+            const paragraphs = Array.isArray(v.bio) ? v.bio : [v.bio];
+            return (
+              <li key={`${v.name}-${i}`} className="card flex flex-col">
+                <div className="flex items-center gap-4">
+                  {v.image ? (
+                    <Image
+                      src={v.image}
+                      alt={`${v.name} — ${v.role}`}
+                      width={72}
+                      height={72}
+                      className="h-[72px] w-[72px] shrink-0 rounded-full object-cover ring-1 ring-white/10"
+                    />
+                  ) : (
+                    <span
+                      aria-hidden="true"
+                      className="inline-flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-full bg-white/5 text-[color:var(--color-text-muted)] ring-1 ring-white/10"
+                    >
+                      <UserRound size={32} />
+                    </span>
+                  )}
+                  <div className="min-w-0">
+                    <h3 className="text-xl font-semibold text-white">{v.name}</h3>
+                    <p className="text-sm text-[color:var(--color-accent)]">{v.role}</p>
+                  </div>
+                </div>
+
+                <div className="mt-5 flex flex-col gap-3 text-sm leading-relaxed text-[color:var(--color-text-muted)]">
+                  {paragraphs.map((para, idx) => (
+                    <p key={idx}>{para}</p>
+                  ))}
+                </div>
+
                 {v.instagram && (
                   <a
                     href={v.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-1.5 text-sm text-[color:var(--color-accent)] hover:underline"
+                    className="mt-5 inline-flex w-fit items-center gap-1.5 text-sm font-medium text-[color:var(--color-accent)] hover:underline"
                   >
                     <Instagram aria-hidden="true" size={14} />
                     {v.instagramHandle ?? "Instagram"}
                   </a>
                 )}
-              </div>
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>

@@ -54,9 +54,12 @@
   ],
   "valmentajat": [
     {
-      "name": "Leif Stenius",
-      "role": "Päävalmentaja",
-      "bio": "KBT Head Coach (KB, MT, MMA, SW)",
+      "name": "Leif \"Lepa\" Stenius",
+      "role": "Päävalmentaja · KB, MT, MMA, SW",
+      "bio": [
+        "Yksi suomalaisen potkunyrkkeilyn pitkän linjan vaikuttajista ja Kickboxing Team Oulun päävalmentaja. Aloitti kamppailulajien parissa jo 1980-luvulla ja on valmentanut aktiivisesti yli neljän vuosikymmenen ajan.",
+        "Lepan tausta rakentuu vahvasta kilpailu- ja valmennuskokemuksesta. Vuosien aikana hänen valmennuksestaan on noussut useita SM-mitalisteja ja kansainvälisillä areenoilla menestyneitä ottelijoita arvokisasijoituksille asti."
+      ],
       "image": "/images/leif.jpg",
       "instagram": "https://www.instagram.com/lepakbt/",
       "instagramHandle": "@lepakbt"
