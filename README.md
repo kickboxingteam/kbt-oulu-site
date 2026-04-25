@@ -38,7 +38,6 @@ Skeema:
 - `hinnasto` — kausimaksut. `featured: true` korostaa kortin
 - `hinnastoNotes` — lisähuomiot hinnaston alle
 - `media` — lehdistöjuttujen lista (otsikko, kuvaus, julkaisija, URL, kuva, julkaisupäivä)
-- `instagramPosts` — 4–6 IG-postausta (url + image + alt)
 
 ### 1b. Media-osio — uuden jutun lisääminen
 
@@ -76,19 +75,7 @@ Jos muuttujaa ei ole, sivu näyttää `content/schedule-fallback.json` -tiedosto
 
 **Sallitut päivien nimet:** Maanantai, Tiistai, Keskiviikko, Torstai, Perjantai, Lauantai, Sunnuntai. Muut päivien nimet näytetään listan loppuun.
 
-### 3. Instagram-ruudukko
-
-Päivittäminen vaatii kuvatiedostot ja postauksen URL:n.
-
-1. Lataa kuva (jpg/png) kansioon `public/images/`, esim. `ig-2026-01.jpg`
-2. Avaa `content/site.json`, muokkaa kohdassa `instagramPosts`:
-   ```json
-   { "url": "https://www.instagram.com/p/ABC123/", "image": "/images/ig-2026-01.jpg", "alt": "Kuvaus" }
-   ```
-
-Kuvasta näytetään 1:1-rajaus, joten neliskanttinen kuva näyttää parhaalta. Pidä `alt`-teksti lyhyenä ja kuvaavana.
-
-### 4. Logo & hero-tausta
+### 3. Logo & hero-tausta
 
 - Logo: `public/images/kbt-logo-new.png` (käytetään Navissa, herossa ja footerissa)
 - Hero-tausta: `public/images/hero-bg.jpg`

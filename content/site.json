@@ -103,13 +103,5 @@
       "imageAlt": "Leif \"Lepa\" Stenius haastattelussa Hakissa.fi:lle",
       "publishedAt": "2026-04-24"
     }
-  ],
-  "instagramPosts": [
-    { "url": "https://www.instagram.com/kickboxingteam/", "image": "/images/ig-placeholder-1.svg", "alt": "Instagram-kuva 1 — lisätään pian" },
-    { "url": "https://www.instagram.com/kickboxingteam/", "image": "/images/ig-placeholder-2.svg", "alt": "Instagram-kuva 2 — lisätään pian" },
-    { "url": "https://www.instagram.com/kickboxingteam/", "image": "/images/ig-placeholder-3.svg", "alt": "Instagram-kuva 3 — lisätään pian" },
-    { "url": "https://www.instagram.com/kickboxingteam/", "image": "/images/ig-placeholder-4.svg", "alt": "Instagram-kuva 4 — lisätään pian" },
-    { "url": "https://www.instagram.com/kickboxingteam/", "image": "/images/ig-placeholder-5.svg", "alt": "Instagram-kuva 5 — lisätään pian" },
-    { "url": "https://www.instagram.com/kickboxingteam/", "image": "/images/ig-placeholder-6.svg", "alt": "Instagram-kuva 6 — lisätään pian" }
   ]
 }

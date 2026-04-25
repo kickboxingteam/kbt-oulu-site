@@ -31,12 +31,6 @@ export type HintaTier = {
   featured: boolean;
 };
 
-export type InstagramPost = {
-  url: string;
-  image: string;
-  alt: string;
-};
-
 export type MediaItem = {
   title: string;
   excerpt: string;
@@ -74,7 +68,6 @@ export type SiteContent = {
   hinnasto: HintaTier[];
   hinnastoNotes: string[];
   media: MediaItem[];
-  instagramPosts: InstagramPost[];
 };
 
 export const site: SiteContent = siteData as SiteContent;
