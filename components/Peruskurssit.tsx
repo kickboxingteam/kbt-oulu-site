@@ -78,6 +78,9 @@ export default function Peruskurssit() {
                 </li>
               ))}
             </ul>
+            <p className="mt-4 text-xs text-[color:var(--color-text-muted)]">
+              Hinta sisältää KBT:n kuluvan vuoden jäsenmaksun (20 €).
+            </p>
             <button
               type="button"
               onClick={openMaksuModal}
