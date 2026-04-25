@@ -3,7 +3,7 @@ import { site } from "@/lib/content";
 
 export default function Yhteystiedot() {
   return (
-    <section id="yhteystiedot" className="section bg-[color:var(--color-bg-soft)]">
+    <section id="yhteystiedot" className="section">
       <div className="container-page">
         <p className="eyebrow">Yhteystiedot</p>
         <h2 className="mt-3 section-title">Tule mukaan</h2>

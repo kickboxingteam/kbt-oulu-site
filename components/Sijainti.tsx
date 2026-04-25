@@ -5,7 +5,7 @@ export default function Sijainti() {
   const { address, mapsEmbedUrl, mapsLinkUrl } = site.contact;
 
   return (
-    <section id="sijainti" className="section">
+    <section id="sijainti" className="section bg-[color:var(--color-bg-soft)]">
       <div className="container-page">
         <p className="eyebrow">Sijainti</p>
         <h2 className="mt-3 section-title">Salin osoite</h2>
