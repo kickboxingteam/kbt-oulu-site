@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fi_FI",
     siteName: site.brand.name,
-    title: `${site.brand.name} — kamppailulajeja Oulussa`,
+    title: `${site.brand.name} — kamppailulajit Oulussa`,
     description: site.brand.description,
     images: ["/images/logo.png"],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.brand.name} — kamppailulajeja Oulussa`,
+    title: `${site.brand.name} — kamppailulajit Oulussa`,
     description: site.brand.description,
   },
   alternates: {

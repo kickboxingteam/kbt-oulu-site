@@ -3,8 +3,8 @@
   "brand": {
     "name": "Kickboxing Team Oulu",
     "shortName": "KBT",
-    "tagline": "Yksi menestyneimmistä kamppailulajiseuroista. Treenaamme turvallisesti, ilon kautta ja jatkuvasti kehittyen.",
-    "description": "Kickboxing Team Oulu on yksi menestyneimmistä kamppailulajiseuroista Oulussa — MMA, potkunyrkkeily, brasilialainen jujutsu ja lukkopaini Värtön liikuntahallilla. Treenaamme turvallisesti, ilon kautta ja jatkuvasti kehittyen."
+    "tagline": "Yksi Pohjois-Suomen menestyneimmistä kamppailulajiseuroista. Treenaamme turvallisesti, ilon kautta ja jatkuvasti kehittyen.",
+    "description": "Kickboxing Team Oulu on yksi Pohjois-Suomen menestyneimmistä kamppailulajiseuroista — MMA, potkunyrkkeily, brasilialainen jujutsu ja lukkopaini Värtön liikuntahallilla Oulussa. Treenaamme turvallisesti, ilon kautta ja jatkuvasti kehittyen."
   },
   "contact": {
     "email": "leif.stenius@gmail.com",
@@ -53,7 +53,7 @@
       "id": "lukkopaini",
       "name": "Lukkopaini",
       "icon": "flame",
-      "description": "Submission wrestling — no-gi-mattokamppailua sidonnoilla ja luksuilla. Tehokas itsenäinen kilpailulaji ja täydennys MMA-treeniin."
+      "description": "Submission wrestling — no-gi-mattokamppailua sidonnoilla ja lukoilla. Tehokas itsenäinen kilpailulaji ja täydennys MMA-treeniin."
     }
   ],
   "valmentajat": [
@@ -95,7 +95,8 @@
   "hinnastoNotes": [
     "Ensimmäiset kaksi tutustumiskertaa ovat aina veloituksetta.",
     "Kertamaksu 10 € yksittäiseen treeniin (käteisellä paikan päällä).",
-    "Yksityistunneista voi kysyä tarjousta suoraan Lepalta."
+    "Yksityistunneista voi kysyä tarjousta suoraan Lepalta.",
+    "Koululais- ja opiskelijaryhmille edulliset hinnat — kysy lisää Lepalta."
   ],
   "lisamaksut": [
     {

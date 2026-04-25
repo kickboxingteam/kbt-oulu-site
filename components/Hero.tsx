@@ -49,14 +49,6 @@ export default function Hero() {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-bg)] via-transparent to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-6">
-              <p className="font-[family-name:var(--font-display)] text-3xl tracking-wider text-white">
-                EST. 2000
-              </p>
-              <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
-                Värtön liikuntahalli · Oulu
-              </p>
-            </div>
           </div>
         </div>
       </div>

@@ -65,7 +65,8 @@ export default function Footer() {
 
         <div className="mt-6 flex flex-col gap-2 text-xs text-[color:var(--color-text-muted)] sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {year} {site.brand.name}. Sivuilta ei kerätä henkilötietoja eikä käytetä evästeitä.
+            © {year} {site.brand.name}. Sivut eivät käytä seuranta- tai mainosevästeitä; upotetut
+            palvelut (Google Maps, ulkoiset linkit) toimivat omilla ehdoillaan.
           </p>
           <address className="not-italic">
             <span className="text-[color:var(--color-text)]">
