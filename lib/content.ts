@@ -47,6 +47,8 @@ export type AjankohtaistaItem = {
   body?: string;
   url: string;
   kicker?: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 export type Peruskurssit = {

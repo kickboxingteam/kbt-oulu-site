@@ -86,28 +86,47 @@ export default function Media() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="card group flex flex-col gap-2 hover:bg-white/[0.05] hover:-translate-y-0.5"
+                      className="card group flex gap-4 hover:bg-white/[0.05] hover:-translate-y-0.5"
                     >
-                      <div className="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
-                        <span>
-                          {item.kicker && (
-                            <>
-                              <span className="text-[color:var(--color-accent)]">{item.kicker}</span>
-                              <span aria-hidden="true"> · </span>
-                            </>
-                          )}
-                          <time dateTime={item.date}>{formatDate(item.date)}</time>
-                        </span>
-                        <ArrowUpRight
-                          aria-hidden="true"
-                          size={14}
-                          className="text-[color:var(--color-text-muted)] transition group-hover:text-[color:var(--color-accent)]"
-                        />
-                      </div>
-                      <h3 className="text-base font-semibold text-white">{item.title}</h3>
-                      {item.body && (
-                        <p className="text-sm text-[color:var(--color-text-muted)]">{item.body}</p>
+                      {item.image && (
+                        <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-lg border border-white/10 bg-white/[0.03]">
+                          <Image
+                            src={item.image}
+                            alt={item.imageAlt ?? ""}
+                            fill
+                            sizes="96px"
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
                       )}
+                      <div className="flex min-w-0 flex-1 flex-col gap-1.5">
+                        <div className="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.2em] text-[color:var(--color-text-muted)]">
+                          <span>
+                            {item.kicker && (
+                              <>
+                                <span className="text-[color:var(--color-accent)]">
+                                  {item.kicker}
+                                </span>
+                                <span aria-hidden="true"> · </span>
+                              </>
+                            )}
+                            <time dateTime={item.date}>{formatDate(item.date)}</time>
+                          </span>
+                          <ArrowUpRight
+                            aria-hidden="true"
+                            size={14}
+                            className="text-[color:var(--color-text-muted)] transition group-hover:text-[color:var(--color-accent)]"
+                          />
+                        </div>
+                        <h3 className="text-base font-semibold leading-tight text-white">
+                          {item.title}
+                        </h3>
+                        {item.body && (
+                          <p className="text-sm leading-snug text-[color:var(--color-text-muted)]">
+                            {item.body}
+                          </p>
+                        )}
+                      </div>
                     </a>
                   </li>
                 ))}
