@@ -8,8 +8,9 @@ export default function Yhteystiedot() {
         <p className="eyebrow">Yhteystiedot</p>
         <h2 className="mt-3 section-title">Tule mukaan</h2>
         <p className="mt-4 max-w-2xl text-[color:var(--color-text-muted)]">
-          Ensimmäinen treeni on aina maksuton. Tule paikalle hieman ennen treenin alkua niin
-          ohjaamme sinut oikeaan ryhmään. Voit myös kysyä etukäteen sähköpostilla tai puhelimitse.
+          Ensimmäiset kaksi tutustumiskertaa ovat aina veloituksetta. Tule paikalle hieman ennen
+          treenin alkua niin ohjaamme sinut oikeaan ryhmään. Voit myös kysyä etukäteen
+          sähköpostilla tai puhelimitse.
         </p>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
