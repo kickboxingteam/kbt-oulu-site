@@ -1,22 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import { Check } from "lucide-react";
 import { site } from "@/lib/content";
 import { openMaksuModal } from "@/lib/maksuModal";
 
 export default function Hinnasto() {
   return (
-    <section id="hinnasto" className="section relative isolate overflow-hidden">
-      <Image
-        src="/images/photos/voitto.jpg"
-        alt=""
-        fill
-        sizes="100vw"
-        className="absolute inset-0 object-cover opacity-12"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--color-bg)]/50 via-[color:var(--color-bg)]/85 to-[color:var(--color-bg)]" />
-      <div className="container-page relative">
+    <section id="hinnasto" className="section">
+      <div className="container-page">
         <p className="eyebrow">Hinnasto</p>
         <h2 className="mt-3 section-title">Kausimaksut</h2>
         <p className="mt-4 max-w-2xl text-[color:var(--color-text-muted)]">

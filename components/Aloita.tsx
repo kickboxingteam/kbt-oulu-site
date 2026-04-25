@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Wallet, ExternalLink } from "lucide-react";
 import { site } from "@/lib/content";
 
@@ -6,19 +5,8 @@ export default function Aloita() {
   const a = site.aloita;
 
   return (
-    <section
-      id="aloita"
-      className="section relative isolate overflow-hidden bg-[color:var(--color-bg-soft)]"
-    >
-      <Image
-        src="/images/photos/voittaja2.jpg"
-        alt=""
-        fill
-        sizes="100vw"
-        className="absolute inset-0 object-cover opacity-15"
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-[color:var(--color-bg-soft)]/40 via-[color:var(--color-bg-soft)]/85 to-[color:var(--color-bg-soft)]" />
-      <div className="container-page relative">
+    <section id="aloita" className="section bg-[color:var(--color-bg-soft)]">
+      <div className="container-page">
         <p className="eyebrow inline-flex items-center gap-2">
           <Wallet aria-hidden="true" size={14} />
           Uudet harrastajat
