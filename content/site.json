@@ -153,6 +153,12 @@
       {
         "title": "Maksa tilille",
         "description": "Tilisiirto, käteinen, Smartum tai ePassi. Esitä kuitti treeneissä — saat merkinnän harjoituskorttiin."
+      },
+      {
+        "title": "Täytä jäsentietolomake",
+        "description": "Maksun jälkeen täytä jäsentietolomake. Tiedot tulevat vain seuran jäsenrekisteriin — eivät kolmansille osapuolille.",
+        "linkUrl": "https://docs.google.com/forms/d/e/1FAIpQLScXbdZ21MDCwUgNLZPPAUoIjkoe7N1EbV2L4JW4z0mmv_AX8Q/viewform",
+        "linkLabel": "Avaa lomake"
       }
     ],
     "payment": {

@@ -61,7 +61,12 @@ export type Peruskurssit = {
   prices: Array<{ label: string; price: string }>;
 };
 
-export type AloitaStep = { title: string; description: string };
+export type AloitaStep = {
+  title: string;
+  description: string;
+  linkUrl?: string;
+  linkLabel?: string;
+};
 
 export type AloitaPayment = {
   iban: string;
