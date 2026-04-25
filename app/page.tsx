@@ -3,8 +3,9 @@ import Hero from "@/components/Hero";
 import Lajit from "@/components/Lajit";
 import Peruskurssit from "@/components/Peruskurssit";
 import Valmentajat from "@/components/Valmentajat";
-import Hinnasto from "@/components/Hinnasto";
 import Aloita from "@/components/Aloita";
+import Hinnasto from "@/components/Hinnasto";
+import Maksuohjeet from "@/components/Maksuohjeet";
 import Treeniajat from "@/components/Treeniajat";
 import Sijainti from "@/components/Sijainti";
 import Media from "@/components/Media";
@@ -22,8 +23,9 @@ export default function HomePage() {
         <Lajit />
         <Peruskurssit />
         <Valmentajat />
-        <Hinnasto />
         <Aloita />
+        <Hinnasto />
+        <Maksuohjeet />
         <Treeniajat />
         <Sijainti />
         <Media />

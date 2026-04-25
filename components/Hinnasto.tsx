@@ -50,6 +50,28 @@ export default function Hinnasto() {
           ))}
         </ul>
 
+        {site.lisamaksut.length > 0 && (
+          <>
+            <p className="eyebrow mt-16">Lisämaksut</p>
+            <ul className="mt-4 grid gap-5 sm:grid-cols-2">
+              {site.lisamaksut.map((extra) => (
+                <li
+                  key={extra.label}
+                  className="card flex flex-col"
+                >
+                  <div className="flex items-baseline justify-between gap-3">
+                    <h3 className="text-base font-semibold text-white">{extra.label}</h3>
+                    <span className="font-[family-name:var(--font-display)] text-2xl tracking-wide text-[color:var(--color-accent)]">
+                      {extra.price}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm text-[color:var(--color-text-muted)]">{extra.note}</p>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+
         {site.hinnastoNotes.length > 0 && (
           <div className="mt-10 grid gap-2 text-sm text-[color:var(--color-text-muted)]">
             {site.hinnastoNotes.map((note) => (

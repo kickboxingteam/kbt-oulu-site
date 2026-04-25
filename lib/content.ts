@@ -61,7 +61,7 @@ export type AloitaPayment = {
   messageExample: string;
 };
 
-export type AloitaExtra = { label: string; price: string; note: string };
+export type Lisamaksu = { label: string; price: string; note: string };
 
 export type AloitaGoodToKnow = {
   title: string;
@@ -74,7 +74,6 @@ export type Aloita = {
   intro: string;
   steps: AloitaStep[];
   payment: AloitaPayment;
-  extras: AloitaExtra[];
   goodToKnow: AloitaGoodToKnow[];
 };
 
@@ -104,6 +103,7 @@ export type SiteContent = {
   valmentajat: Valmentaja[];
   hinnasto: HintaTier[];
   hinnastoNotes: string[];
+  lisamaksut: Lisamaksu[];
   peruskurssit: Peruskurssit;
   aloita: Aloita;
   media: MediaItem[];

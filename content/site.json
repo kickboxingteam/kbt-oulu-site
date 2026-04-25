@@ -90,9 +90,19 @@
   ],
   "hinnastoNotes": [
     "Kausimaksulla voit harjoitella rajattomasti kaikissa lajeissa.",
-    "Lisäksi vuosittainen jäsenmaksu 20 € (sisältyy peruskurssin hintaan ensimmäisenä vuonna).",
-    "Kertamaksu yksittäiseen treeniin 10 € — käteisellä paikan päällä.",
     "Ensimmäiset kaksi tutustumiskertaa ovat aina veloituksetta."
+  ],
+  "lisamaksut": [
+    {
+      "label": "Jäsenmaksu",
+      "price": "20 € / vuosi",
+      "note": "Kausimaksun lisäksi kerran vuodessa. Sisältyy peruskurssin hintaan ensimmäisenä vuonna."
+    },
+    {
+      "label": "Kertamaksu",
+      "price": "10 €",
+      "note": "Käteisellä ennen treenin alkua, kun haluat käydä yksittäisellä tunnilla."
+    }
   ],
   "peruskurssit": {
     "title": "Peruskurssit",
@@ -140,18 +150,6 @@
       "messageLabel": "Maksuviesti",
       "messageExample": "Etunimi Sukunimi, 6 kk harjoitusmaksu + jäsenmaksu"
     },
-    "extras": [
-      {
-        "label": "Jäsenmaksu",
-        "price": "20 € / vuosi",
-        "note": "Kausimaksun lisäksi kerran vuodessa. Sisältyy peruskurssin hintaan ensimmäisenä vuonna."
-      },
-      {
-        "label": "Kertamaksu",
-        "price": "10 €",
-        "note": "Käteisellä ennen treenin alkua, kun haluat käydä yksittäisellä tunnilla."
-      }
-    ],
     "goodToKnow": [
       {
         "title": "Tauotus",

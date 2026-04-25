@@ -8,8 +8,8 @@ import { site } from "@/lib/content";
 const links = [
   { href: "#lajit", label: "Lajit" },
   { href: "#valmentajat", label: "Valmentajat" },
-  { href: "#hinnasto", label: "Hinnasto" },
   { href: "#aloita", label: "Aloita" },
+  { href: "#hinnasto", label: "Hinnasto" },
   { href: "#treeniajat", label: "Treeniajat" },
   { href: "#sijainti", label: "Sijainti" },
   { href: "#yhteystiedot", label: "Yhteystiedot" },
