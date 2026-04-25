@@ -40,7 +40,7 @@ export default function Nav() {
       >
         <a href="#" className="flex items-center gap-3" aria-label={`${site.brand.name} — etusivu`}>
           <Image
-            src="/images/kbt-logo-new.png"
+            src="/images/logo.png"
             alt=""
             width={48}
             height={48}

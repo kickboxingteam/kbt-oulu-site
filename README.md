@@ -77,7 +77,7 @@ Jos muuttujaa ei ole, sivu näyttää `content/schedule-fallback.json` -tiedosto
 
 ### 3. Logo & hero-tausta
 
-- Logo: `public/images/kbt-logo-new.png` (käytetään Navissa, herossa ja footerissa)
+- Logo: `public/images/logo.png` (käytetään Navissa, herossa ja footerissa)
 - Hero-tausta: `public/images/hero-bg.jpg`
 
 Korvaa tiedostot suoraan, säilytä samat tiedostonimet.

@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-wrap items-start justify-between gap-8">
           <div className="flex items-center gap-3">
             <Image
-              src="/images/kbt-logo-new.png"
+              src="/images/logo.png"
               alt=""
               width={44}
               height={44}

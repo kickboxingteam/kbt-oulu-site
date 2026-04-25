@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: site.brand.name,
     title: `${site.brand.name} — kamppailulajeja Oulussa`,
     description: site.brand.description,
-    images: ["/images/kbt-logo-new.png"],
+    images: ["/images/logo.png"],
   },
   twitter: {
     card: "summary_large_image",
