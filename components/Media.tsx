@@ -22,19 +22,20 @@ export default function Media() {
   return (
     <section id="media" className="section">
       <div className="container-page">
-        <p className="eyebrow inline-flex items-center gap-2">
-          <Newspaper aria-hidden="true" size={14} />
-          Lehdistössä
-        </p>
-        <h2 className="mt-3 section-title">Seurasta kirjoitettua</h2>
+        <h2 className="section-title">Seurasta kirjoitettua</h2>
         <p className="mt-4 max-w-2xl text-[color:var(--color-text-muted)]">
           Haastatteluja, kilpailuraportteja ja tuoreita kuulumisia seuran toiminnasta.
         </p>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.4fr_1fr] items-start">
           {hasMedia && (
-            <ul className="flex flex-col gap-6">
-              {site.media.map((item) => (
+            <div>
+              <p className="eyebrow inline-flex items-center gap-2">
+                <Newspaper aria-hidden="true" size={14} />
+                Lehdistössä
+              </p>
+              <ul className="mt-4 flex flex-col gap-6">
+                {site.media.map((item) => (
                 <li key={item.url}>
                   <a
                     href={item.url}
@@ -69,8 +70,9 @@ export default function Media() {
                     </div>
                   </a>
                 </li>
-              ))}
-            </ul>
+                ))}
+              </ul>
+            </div>
           )}
 
           {hasAjankohtaista && (
