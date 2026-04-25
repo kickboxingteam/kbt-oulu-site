@@ -8,12 +8,20 @@ import {
   Wallet,
   Info,
   ExternalLink,
-  GraduationCap,
-  Receipt,
-  Calendar,
-  ArrowRight,
 } from "lucide-react";
 import { site } from "@/lib/content";
+
+const peruskurssiPerks = [
+  "Aloittelijoille",
+  "12 v ikäraja, ei taustaa",
+  "Sis. jäsenmaksun",
+];
+
+const muutMaksutPerks = [
+  "Jäsenmaksu vuosittain",
+  "Kertamaksu treeniin",
+  "Yksityistunnit Lepalta",
+];
 
 export default function Hinnasto() {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
@@ -36,7 +44,7 @@ export default function Hinnasto() {
           tilisiirtona — ei tarvetta kuukausilaskutuksille tai sopimuksille.
         </p>
 
-        <ul className="mt-12 grid gap-5 md:grid-cols-3">
+        <ul className="mt-12 grid gap-5 md:grid-cols-3 lg:grid-cols-5">
           {site.hinnasto.map((tier) => (
             <li
               key={tier.id}
@@ -51,8 +59,10 @@ export default function Hinnasto() {
                   Suosituin
                 </span>
               )}
-              <h3 className="text-lg font-semibold text-white">{tier.name}</h3>
-              <p className="mt-3 font-[family-name:var(--font-display)] text-5xl tracking-wide text-white">
+              <h3 className="text-base font-semibold uppercase tracking-wider text-white">
+                {tier.name}
+              </h3>
+              <p className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-wide text-white">
                 {tier.price}
               </p>
               <ul className="mt-6 flex flex-col gap-2 text-sm text-[color:var(--color-text-muted)]">
@@ -67,67 +77,60 @@ export default function Hinnasto() {
                   </li>
                 ))}
               </ul>
-              <button type="button" onClick={open} className="btn-ghost mt-6 w-full">
+              <button type="button" onClick={open} className="btn-ghost mt-auto pt-6 w-full">
                 Aloita harjoittelu
               </button>
             </li>
           ))}
-        </ul>
 
-        <div className="mt-6 grid gap-5 md:grid-cols-2">
-          <div className="card flex flex-col">
-            <div className="flex items-center gap-2 text-[color:var(--color-accent)]">
-              <GraduationCap aria-hidden="true" size={18} />
-              <h3 className="text-lg font-semibold text-white">Peruskurssi</h3>
-            </div>
-            <ul className="mt-4 flex flex-col divide-y divide-white/5">
-              {site.peruskurssit.prices.map((p) => (
-                <li
-                  key={p.label}
-                  className="flex items-baseline justify-between gap-4 py-3 first:pt-0 last:pb-0"
-                >
-                  <span className="text-sm text-[color:var(--color-text-muted)]">{p.label}</span>
-                  <span className="font-[family-name:var(--font-display)] text-2xl tracking-wide text-white">
-                    {p.price}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 text-xs text-[color:var(--color-text-muted)]">
-              Hinta sisältää KBT:n kuluvan vuoden jäsenmaksun (20 €).
+          <li className="card relative flex flex-col">
+            <h3 className="text-base font-semibold uppercase tracking-wider text-white">
+              Peruskurssi
+            </h3>
+            <p className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-wide text-white">
+              120 €
             </p>
-            {site.peruskurssit.seasonNote && (
-              <p className="mt-4 inline-flex items-start gap-2 rounded-lg border border-[color:var(--color-accent)]/30 bg-[color:var(--color-accent)]/10 px-3 py-2 text-xs text-[color:var(--color-accent)]">
-                <Calendar aria-hidden="true" size={14} className="mt-0.5 shrink-0" />
-                <span>{site.peruskurssit.seasonNote}</span>
-              </p>
-            )}
-            <a href="#peruskurssit" className="btn-ghost mt-auto pt-6 w-full">
-              Lue lisää peruskurssista
-              <ArrowRight aria-hidden="true" size={16} />
-            </a>
-          </div>
-
-          <div className="card flex flex-col">
-            <div className="flex items-center gap-2 text-[color:var(--color-accent)]">
-              <Receipt aria-hidden="true" size={18} />
-              <h3 className="text-lg font-semibold text-white">Muut maksut</h3>
-            </div>
-            <ul className="mt-4 flex flex-col divide-y divide-white/5">
-              {site.lisamaksut.map((item) => (
-                <li key={item.label} className="py-3 first:pt-0 last:pb-0">
-                  <div className="flex items-baseline justify-between gap-4">
-                    <span className="text-sm font-medium text-white">{item.label}</span>
-                    <span className="font-[family-name:var(--font-display)] text-xl tracking-wide text-[color:var(--color-accent)]">
-                      {item.price}
-                    </span>
-                  </div>
-                  <p className="mt-1 text-xs text-[color:var(--color-text-muted)]">{item.note}</p>
+            <ul className="mt-6 flex flex-col gap-2 text-sm text-[color:var(--color-text-muted)]">
+              {peruskurssiPerks.map((perk) => (
+                <li key={perk} className="flex items-start gap-2">
+                  <Check
+                    aria-hidden="true"
+                    size={18}
+                    className="mt-0.5 shrink-0 text-[color:var(--color-accent)]"
+                  />
+                  <span>{perk}</span>
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
+            <button type="button" onClick={open} className="btn-ghost mt-auto pt-6 w-full">
+              Lue lisää
+            </button>
+          </li>
+
+          <li className="card relative flex flex-col">
+            <h3 className="text-base font-semibold uppercase tracking-wider text-white">
+              Muut maksut
+            </h3>
+            <p className="mt-3 font-[family-name:var(--font-display)] text-4xl tracking-wide text-white">
+              Alk. 10 €
+            </p>
+            <ul className="mt-6 flex flex-col gap-2 text-sm text-[color:var(--color-text-muted)]">
+              {muutMaksutPerks.map((perk) => (
+                <li key={perk} className="flex items-start gap-2">
+                  <Check
+                    aria-hidden="true"
+                    size={18}
+                    className="mt-0.5 shrink-0 text-[color:var(--color-accent)]"
+                  />
+                  <span>{perk}</span>
+                </li>
+              ))}
+            </ul>
+            <button type="button" onClick={open} className="btn-ghost mt-auto pt-6 w-full">
+              Lue lisää
+            </button>
+          </li>
+        </ul>
 
         {site.hinnastoNotes.length > 0 && (
           <div className="mt-10 grid gap-2 text-sm text-[color:var(--color-text-muted)]">
@@ -219,6 +222,33 @@ export default function Hinnasto() {
               </div>
             </dl>
           </section>
+
+          {site.peruskurssit.prices.length > 0 && (
+            <section className="mt-6">
+              <p className="eyebrow">Peruskurssi</p>
+              <ul className="mt-3 flex flex-col divide-y divide-white/5 rounded-xl border border-white/10 bg-white/[0.03] px-4">
+                {site.peruskurssit.prices.map((p) => (
+                  <li
+                    key={p.label}
+                    className="flex items-baseline justify-between gap-4 py-3"
+                  >
+                    <span className="text-sm text-[color:var(--color-text-muted)]">{p.label}</span>
+                    <span className="font-[family-name:var(--font-display)] text-xl tracking-wide text-white">
+                      {p.price}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-2 text-xs text-[color:var(--color-text-muted)]">
+                Hinta sisältää KBT:n kuluvan vuoden jäsenmaksun (20 €).
+              </p>
+              {site.peruskurssit.seasonNote && (
+                <p className="mt-3 inline-flex items-start gap-2 rounded-lg border border-[color:var(--color-accent)]/30 bg-[color:var(--color-accent)]/10 px-3 py-2 text-xs text-[color:var(--color-accent)]">
+                  {site.peruskurssit.seasonNote}
+                </p>
+              )}
+            </section>
+          )}
 
           {site.lisamaksut.length > 0 && (
             <section className="mt-6">
