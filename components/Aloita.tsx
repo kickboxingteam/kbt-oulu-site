@@ -23,7 +23,9 @@ export default function Aloita() {
               >
                 {idx + 1}
               </span>
-              <h3 className="text-lg font-semibold text-white">{step.title}</h3>
+              <h3 className="font-sans text-base font-bold uppercase tracking-wider text-white">
+                {step.title}
+              </h3>
               <p className="mt-2 text-sm text-[color:var(--color-text-muted)]">
                 {step.description}
               </p>
