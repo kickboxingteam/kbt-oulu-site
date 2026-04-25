@@ -4,7 +4,7 @@
     "name": "Kickboxing Team Oulu",
     "shortName": "KBT",
     "tagline": "Kamppailulajeja kaikentasoisille — vuodesta 2002",
-    "description": "Kickboxing Team Oulu on oululainen kamppailulajiseura. Valikoimassa MMA, potkunyrkkeily ja brasilialainen jujutsu. Tervetuloa kokeilemaan ensimmäinen treeni veloituksetta."
+    "description": "Kickboxing Team Oulu on oululainen kamppailulajiseura. Valikoimassa MMA, potkunyrkkeily, brasilialainen jujutsu ja lukkopaini. Tervetuloa kokeilemaan ensimmäinen treeni veloituksetta."
   },
   "contact": {
     "email": "leif.stenius@gmail.com",
@@ -44,6 +44,12 @@
       "name": "Brasilialainen jujutsu",
       "icon": "users",
       "description": "Mattokamppailu ja sidonnat. Tekninen laji, joka kehittää ongelmanratkaisukykyä ja kehonhallintaa."
+    },
+    {
+      "id": "lukkopaini",
+      "name": "Lukkopaini",
+      "icon": "flame",
+      "description": "Submission wrestling — no-gi-mattokamppailua sidonnoilla ja luksuilla. Tehokas itsenäinen kilpailulaji ja täydennys MMA-treeniin."
     }
   ],
   "valmentajat": [

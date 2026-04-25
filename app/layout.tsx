@@ -19,7 +19,7 @@ const bebas = Bebas_Neue({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kickboxingteam.com"),
   title: {
-    default: `${site.brand.name} — MMA, potkunyrkkeily, BJJ`,
+    default: `${site.brand.name} — MMA, potkunyrkkeily, BJJ, lukkopaini`,
     template: `%s | ${site.brand.shortName}`,
   },
   description: site.brand.description,
