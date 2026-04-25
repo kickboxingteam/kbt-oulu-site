@@ -9,8 +9,7 @@ export default function Valmentajat() {
         <p className="eyebrow">Valmentajat</p>
         <h2 className="mt-3 section-title">Kokeneet ohjaajat</h2>
         <p className="mt-4 max-w-2xl text-[color:var(--color-text-muted)]">
-          Valmentajamme ovat kokeneita kamppailulajien ohjaajia. Tarkemmat esittelyt päivittyvät
-          tähän pian.
+          Valmentajamme ovat kokeneita kamppailulajien ohjaajia.
         </p>
 
         <ul className="mt-12 grid gap-6 sm:grid-cols-2">
