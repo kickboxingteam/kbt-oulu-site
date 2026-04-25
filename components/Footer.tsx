@@ -63,9 +63,17 @@ export default function Footer() {
 
         <div className="section-divider mt-10" />
 
-        <p className="mt-6 text-xs text-[color:var(--color-text-muted)]">
-          © {year} {site.brand.name}. Sivuilta ei kerätä henkilötietoja eikä käytetä evästeitä.
-        </p>
+        <div className="mt-6 flex flex-col gap-2 text-xs text-[color:var(--color-text-muted)] sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {year} {site.brand.name}. Sivuilta ei kerätä henkilötietoja eikä käytetä evästeitä.
+          </p>
+          <address className="not-italic">
+            <span className="text-[color:var(--color-text)]">
+              {site.contact.postalAddress.label}:
+            </span>{" "}
+            {site.contact.postalAddress.lines.join(", ")}
+          </address>
+        </div>
       </div>
     </footer>
   );

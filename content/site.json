@@ -4,7 +4,7 @@
     "name": "Kickboxing Team Oulu",
     "shortName": "KBT",
     "tagline": "Kamppailulajeja kaikentasoisille — vuodesta 2002",
-    "description": "Kickboxing Team Oulu on oululainen kamppailulajiseura. Valikoimassa MMA, potkunyrkkeily, brasilialainen jujutsu ja lukkopaini. Tervetuloa kokeilemaan ensimmäinen treeni veloituksetta."
+    "description": "Kickboxing Team Oulu on yksi Suomen menestyneimmistä kamppailulajiseuroista. Treenaamme turvallisesti, ilon kautta ja jatkuvasti kehittyen. Valikoimassa MMA, potkunyrkkeily, brasilialainen jujutsu ja lukkopaini."
   },
   "contact": {
     "email": "leif.stenius@gmail.com",
@@ -16,6 +16,10 @@
       "street": "Kurkelankuja 2",
       "postalCode": "90230",
       "city": "Oulu"
+    },
+    "postalAddress": {
+      "label": "Postiosoite",
+      "lines": ["Kickboxing Team ry", "Peikontie 1D 48", "90550 Oulu"]
     },
     "mapsEmbedUrl": "https://maps.google.com/maps?q=V%C3%A4rt%C3%B6n+liikuntahalli%2C+Kurkelankuja+2%2C+90230+Oulu&hl=fi&t=&z=15&ie=UTF8&iwloc=B&output=embed",
     "mapsLinkUrl": "https://www.google.com/maps/dir/?api=1&destination=V%C3%A4rt%C3%B6n+liikuntahalli%2C+Kurkelankuja+2%2C+90230+Oulu"

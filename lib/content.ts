@@ -100,6 +100,7 @@ export type SiteContent = {
     phoneTel: string;
     iban: string;
     address: Address;
+    postalAddress: { label: string; lines: string[] };
     mapsEmbedUrl: string;
     mapsLinkUrl: string;
   };
