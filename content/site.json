@@ -45,12 +45,12 @@
       "images": ["/images/photos/keha.jpg", "/images/hero-bg.jpg"],
       "keyFacts": [
         { "label": "Sopii", "value": "Aloittelijoille ja kilpailijoille" },
-        { "label": "Painopiste", "value": "Lyönnit, potkut, painin ja sidonnat" },
+        { "label": "Painopiste", "value": "Lyönnit, potkut, paini ja sidonnat" },
         { "label": "Mukaan", "value": "Peruskurssilta tai suoraan kokeneille" }
       ],
       "federation": {
         "name": "Suomen Vapaaotteluliitto",
-        "url": "https://www.smmaf.fi/"
+        "url": "https://www.vapaaottelu.fi/"
       }
     },
     {
@@ -72,7 +72,7 @@
       ],
       "federation": {
         "name": "Suomen Potkunyrkkeilyliitto",
-        "url": "https://www.spnl.fi/"
+        "url": "https://www.kickboxing.fi/"
       }
     },
     {
@@ -94,7 +94,7 @@
       ],
       "federation": {
         "name": "Suomen BJJ-liitto",
-        "url": "https://www.fbjjf.fi/"
+        "url": "https://bjjliitto.fi/"
       }
     },
     {
@@ -115,8 +115,8 @@
         { "label": "Mukaan", "value": "Peruskurssilta tai suoraan kokeneille" }
       ],
       "federation": {
-        "name": "Suomen Lukkopainiliitto",
-        "url": "https://www.lukkopainiliitto.fi/"
+        "name": "ADCC Finland",
+        "url": "https://www.adccfinland.com/"
       }
     }
   ],
