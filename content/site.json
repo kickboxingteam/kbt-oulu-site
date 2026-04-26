@@ -37,14 +37,14 @@
       "icon": "swords",
       "description": "Vapaaottelu yhdistää lyönnit, potkut, painin ja sidontatekniikat. Soveltuu sekä kilpailijoille että kuntoharrastajille.",
       "longDescription": [
-        "Vapaaottelu eli Mixed Martial Arts yhdistää lyönnit, potkut, painin ja sidontatekniikat yhdeksi kokonaislajiksi. Ottelu siirtyy stand-up-vaiheesta matolle — ottelijan on hallittava monipuolisesti eri kamppailutyylejä.",
+        "Vapaaottelu eli Mixed Martial Arts yhdistää lyönnit, potkut, painin ja sidontatekniikat yhdeksi kokonaislajiksi. Ottelu siirtyy pysty-vaiheesta matolle — ottelijan on hallittava monipuolisesti eri kamppailutyylejä.",
         "KBT:n MMA-treeneissä kierrätetään tyylejä viikkokierron mukaan: pysty-treeneissä lyönnit ja potkut, matto-treeneissä painin ja sidonnat. Soveltuu kuntoharrastajille jotka etsivät monipuolista kamppailutreeniä, sekä kilpailijoille jotka tähtäävät SM-tasolle tai kansainvälisille areenoille."
       ],
       "images": ["/images/photos/keha.jpg", "/images/hero-bg.jpg"],
       "keyFacts": [
-        { "label": "Tyyli", "value": "Stand-up ja matto" },
         { "label": "Sopii", "value": "Aloittelijoille ja kilpailijoille" },
-        { "label": "Säännöt", "value": "Unified Rules of MMA" }
+        { "label": "Painopiste", "value": "Lyönnit, potkut, painin ja sidonnat" },
+        { "label": "Mukaan", "value": "Peruskurssilta tai suoraan kokeneille" }
       ],
       "federation": {
         "name": "Suomen Vapaaotteluliitto",
@@ -57,14 +57,14 @@
       "icon": "shield",
       "description": "Klassinen kickboxing — lyönnit ja potkut. Erinomainen pohja kamppailulajiharjoittelulle ja kunnolle.",
       "longDescription": [
-        "Potkunyrkkeily on stand-up-laji jossa lyönnit ja potkut yhdistyvät tekniikkaan, ajoitukseen ja räjähtävyyteen. K-1 ja Full Contact -tyylit ovat KBT:n harjoittelun perusta, ja laji toimii erinomaisena pohjana minkä tahansa kamppailulajin jatko-opinnoille.",
+        "Potkunyrkkeily on pysty-laji jossa lyönnit ja potkut yhdistyvät tekniikkaan, ajoitukseen ja räjähtävyyteen. K-1 ja Full Contact -tyylit ovat KBT:n harjoittelun perusta, ja laji toimii erinomaisena pohjana minkä tahansa kamppailulajin jatko-opinnoille.",
         "Treeneissä kehitetään tekniikkaa, kestävyyttä ja taktiikkaa. Soveltuu sekä kilpailutavoitteisille että fyysiseen kuntoon ja itseluottamukseen pyrkiville. Aikataulussa pystytreenit jaetaan noviiseille ja ylemmille — siirtyminen tasolta toiselle tapahtuu ohjaajan hyväksynnällä."
       ],
       "images": ["/images/photos/voitto.jpg", "/images/photos/voittaja3.jpg"],
       "keyFacts": [
-        { "label": "Tyyli", "value": "K-1 / Full Contact" },
-        { "label": "Sopii", "value": "Kaikenikäisille (12 v +)" },
-        { "label": "Lisenssi", "value": "H-lisenssi (harrastaja)" }
+        { "label": "Sopii", "value": "Aikuisille ja junnuille (12 v +)" },
+        { "label": "Painopiste", "value": "Lyönnit ja potkut" },
+        { "label": "Mukaan", "value": "Peruskurssilta tai suoraan kokeneille" }
       ],
       "federation": {
         "name": "Suomen Potkunyrkkeilyliitto",
@@ -82,9 +82,9 @@
       ],
       "images": ["/images/photos/halaus.jpg"],
       "keyFacts": [
-        { "label": "Muodot", "value": "Gi (puku) ja no-gi" },
-        { "label": "Sopii", "value": "Kaikille, painopiste tekniikassa" },
-        { "label": "Vyöjärjestelmä", "value": "Valkoinen → musta" }
+        { "label": "Sopii", "value": "Kaikille tasoille, painopiste tekniikassa" },
+        { "label": "Painopiste", "value": "Sidonnat ja lukot, gi ja no-gi" },
+        { "label": "Mukaan", "value": "Peruskurssilta (gi tai no-gi)" }
       ],
       "federation": {
         "name": "Suomen BJJ-liitto",
@@ -102,9 +102,9 @@
       ],
       "images": ["/images/photos/voittaja3.jpg"],
       "keyFacts": [
-        { "label": "Muoto", "value": "No-gi (ilman pukua)" },
-        { "label": "Painotus", "value": "Sidonnat, kaadot, lukot" },
-        { "label": "Treenit", "value": "Lauantai 14:00–15:30" }
+        { "label": "Sopii", "value": "MMA-täydennykseen ja kilpailijoille" },
+        { "label": "Painopiste", "value": "Sidonnat, kaadot ja lukot (no-gi)" },
+        { "label": "Mukaan", "value": "Peruskurssilta tai suoraan kokeneille" }
       ],
       "federation": {
         "name": "Suomen Lukkopainiliitto",
