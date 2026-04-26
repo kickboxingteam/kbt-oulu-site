@@ -12,8 +12,8 @@ export default function Lajit({
         <p className="eyebrow">Lajit</p>
         <h2 className="mt-3 section-title">Lajivalikoima</h2>
         <p className="mt-4 max-w-2xl text-[color:var(--color-text-muted)]">
-          Treeneihin voi tulla kokeilemaan oman kunnon ja kokemuksen mukaan. Aloittelijat ohjataan
-          aluksi peruskursseille ja kokeneemmat suoraan jatkoryhmiin.
+          Treeneihin voi tulla kokeilemaan oman kunnon ja kokemuksen mukaan. Aloittelijat
+          aloittavat peruskurssilta, kokeneemmat tulevat suoraan jatkoryhmiin.
         </p>
 
         <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

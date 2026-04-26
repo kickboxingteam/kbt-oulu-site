@@ -211,7 +211,7 @@ export default function LajiModal({
                 onClick={() => close()}
                 className="btn-primary"
               >
-                Treenit tähän lajiin
+                Katso treeniaikataulu
                 <ArrowRight aria-hidden="true" size={16} />
               </a>
             </div>
