@@ -62,21 +62,36 @@ export default function LajiModal({
     >
       {laji && (
         <div className="max-h-[85vh] overflow-y-auto">
-          {laji.images && laji.images.length > 0 && (
-            <div className="relative aspect-[16/9] w-full overflow-hidden">
-              <Image
-                src={laji.images[0]}
-                alt=""
-                fill
-                sizes="56rem"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[color:var(--color-bg-soft)]" />
+          {(laji.video || (laji.images && laji.images.length > 0)) && (
+            <div className="relative aspect-[16/9] w-full overflow-hidden bg-black">
+              {laji.video ? (
+                <video
+                  src={laji.video}
+                  poster={laji.images?.[0]}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              ) : (
+                laji.images?.[0] && (
+                  <>
+                    <Image
+                      src={laji.images[0]}
+                      alt=""
+                      fill
+                      sizes="56rem"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[color:var(--color-bg-soft)]" />
+                  </>
+                )
+              )}
               <button
                 type="button"
                 onClick={close}
                 aria-label="Sulje"
-                className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white backdrop-blur hover:bg-black/80"
+                className="absolute right-4 top-4 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white backdrop-blur hover:bg-black/80"
               >
                 <X aria-hidden="true" size={18} />
               </button>

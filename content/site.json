@@ -109,6 +109,7 @@
         "Sopii sinulle, jos haluat fyysisen ja teknisen mattolajin, jossa paini ja lopetukset yhdistyvät."
       ],
       "images": ["/images/photos/voittaja3.jpg"],
+      "video": "/videos/lukkopaini.mp4",
       "keyFacts": [
         { "label": "Sopii", "value": "MMA-täydennykseen ja kilpailijoille" },
         { "label": "Painopiste", "value": "Sidonnat, kaadot ja lukot (no-gi)" },
