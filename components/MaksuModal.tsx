@@ -22,7 +22,7 @@ export default function MaksuModal() {
     <dialog
       ref={dialogRef}
       aria-labelledby="maksu-modal-title"
-      className="fixed inset-0 m-auto h-fit max-h-[85vh] w-[min(48rem,calc(100vw-2rem))] rounded-2xl border border-white/10 bg-[color:var(--color-bg-soft)] p-0 text-[color:var(--color-text)] shadow-2xl shadow-black/60 backdrop:bg-black/70 backdrop:backdrop-blur-sm"
+      className="fixed inset-0 m-auto h-fit max-h-[85vh] w-[min(48rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-white/10 bg-[color:var(--color-bg-soft)] p-0 text-[color:var(--color-text)] shadow-2xl shadow-black/60 backdrop:bg-black/70 backdrop:backdrop-blur-sm"
       onClick={(e) => {
         if (e.target === dialogRef.current) close();
       }}
