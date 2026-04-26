@@ -34,7 +34,7 @@ export default function Media() {
                 <Newspaper aria-hidden="true" size={14} />
                 Lehdistössä
               </p>
-              <ul className="mt-4 flex max-h-[720px] min-h-0 flex-1 flex-col gap-6 overflow-y-auto overscroll-contain pr-2">
+              <ul className="mt-4 flex max-h-[540px] min-h-0 flex-1 flex-col gap-6 overflow-y-auto overscroll-contain pr-2">
                 {site.media.map((item) => (
                 <li key={item.url}>
                   <a
@@ -81,7 +81,7 @@ export default function Media() {
                 <Instagram aria-hidden="true" size={14} />
                 Ajankohtaista
               </p>
-              <ul className="mt-4 flex max-h-[720px] min-h-0 flex-1 flex-col gap-3 overflow-y-auto overscroll-contain pr-2">
+              <ul className="mt-4 flex flex-col gap-3">
                 {site.ajankohtaista.map((item, idx) => (
                   <li key={`${item.url}-${idx}`}>
                     <a
