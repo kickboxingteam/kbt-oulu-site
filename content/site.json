@@ -251,6 +251,14 @@
   },
   "ajankohtaista": [
     {
+      "date": "2026-05-01",
+      "title": "Hyvää vappua!",
+      "url": "https://www.instagram.com/kickboxingteam/reel/DXpYMmajInA/",
+      "kicker": "Instagram",
+      "image": "/images/ajankohtaista/vappu2026.png",
+      "imageAlt": "Vappu 2026 — Kickboxing Team Oulu"
+    },
+    {
       "date": "2026-04-19",
       "title": "Historialliset SM-kisat",
       "body": "Viime viikonloppuna 18.–19.4.2026 käytiin historialliset potkunyrkkeilyn SM-kisat — KBT:lle seitsemän kultaa.",
@@ -267,15 +275,6 @@
       "kicker": "Instagram",
       "image": "/images/ajankohtaista/peku052026.png",
       "imageAlt": "Lukkopainin ja BJJ:n tehoperuskurssin mainos"
-    },
-    {
-      "date": "2026-04-11",
-      "title": "Sparrileiri 11.–12.4. KBT:n salilla",
-      "body": "Pääsiäisen sparrileiri Värtön salilla — kahden päivän intensiiviset treenit kaikissa lajeissa.",
-      "url": "https://www.instagram.com/kickboxingteam/reel/DWrIPNEDJz3/",
-      "kicker": "Instagram",
-      "image": "/images/ajankohtaista/paasiainen2026.png",
-      "imageAlt": "Pääsiäisen sparrileiri 2026 — KBT:n sali"
     }
   ],
   "media": [
