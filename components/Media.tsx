@@ -86,8 +86,9 @@ export default function Media() {
                   <li key={`${item.url}-${idx}`}>
                     <a
                       href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      {...(item.url.startsWith("#")
+                        ? {}
+                        : { target: "_blank", rel: "noopener noreferrer" })}
                       className="card group flex gap-4 hover:bg-white/[0.05] hover:-translate-y-0.5"
                     >
                       {item.image && (
