@@ -76,7 +76,7 @@ export default function Media() {
           )}
 
           {hasAjankohtaista && (
-            <div className="flex flex-col">
+            <div id="ajankohtaista" className="flex scroll-mt-24 flex-col">
               <p className="eyebrow inline-flex items-center gap-2">
                 <Instagram aria-hidden="true" size={14} />
                 Ajankohtaista
