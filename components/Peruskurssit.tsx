@@ -22,6 +22,16 @@ type KurssiGroup = {
   times: string[];
 };
 
+const WEEKDAY_SHORT = ["su", "ma", "ti", "ke", "to", "pe", "la"];
+
+function withWeekday(dateStr: string): string {
+  const m = dateStr.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
+  if (!m) return dateStr;
+  const date = new Date(Number(m[3]), Number(m[2]) - 1, Number(m[1]));
+  if (Number.isNaN(date.getTime())) return dateStr;
+  return `${WEEKDAY_SHORT[date.getDay()]} ${dateStr}`;
+}
+
 function groupKurssit(
   rows: PeruskurssiRow[],
   startDates: Record<string, string>,
@@ -88,7 +98,7 @@ export default function Peruskurssit({
                   {g.startDate && (
                     <p className="mt-2 inline-flex items-center gap-2 text-sm text-[color:var(--color-accent)]">
                       <Calendar aria-hidden="true" size={14} className="shrink-0" />
-                      Alkaa {g.startDate}
+                      Alkaa {withWeekday(g.startDate)}
                     </p>
                   )}
                   <ul className="mt-3 flex flex-col gap-1.5">
