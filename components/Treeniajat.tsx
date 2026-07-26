@@ -1,5 +1,11 @@
 import { Calendar, AlertTriangle, Info, ChevronDown } from "lucide-react";
-import { getSchedule, groupByDay, type ScheduleRow } from "@/lib/schedule";
+import {
+  getSchedule,
+  getPeruskurssiInfo,
+  getPeruskurssiSchedule,
+  groupByDay,
+  type ScheduleRow,
+} from "@/lib/schedule";
 
 const glossary = {
   lajit: [
@@ -46,11 +52,39 @@ function hasAnyValue(rows: ScheduleRow[], key: ColumnKey): boolean {
   return rows.some((r) => r[key] && r[key].trim().length > 0);
 }
 
+type MergedRow = ScheduleRow & { pekkuStart?: string };
+
+function shortDate(date: string): string {
+  const m = date.match(/^(\d{1,2}\.\d{1,2}\.)\d{4}$/);
+  return m ? m[1] : date;
+}
+
 export default async function Treeniajat() {
-  const schedule = await getSchedule();
-  const grouped = groupByDay(schedule.rows);
-  const showCoach = hasAnyValue(schedule.rows, "coach");
-  const showHall = hasAnyValue(schedule.rows, "hall");
+  const [schedule, pekkuRows, pekkuInfo] = await Promise.all([
+    getSchedule(),
+    getPeruskurssiSchedule(),
+    getPeruskurssiInfo(),
+  ]);
+  // Peruskurssit yhdistetään viikkoaikatauluun Sheetin sivupalstasta (F–I);
+  // ne osuvat aikajärjestyksessä päivän loppuun, koska pekut ovat aina viimeiset.
+  const mergedRows: MergedRow[] = [
+    ...schedule.rows,
+    ...pekkuRows.map((r) => {
+      const startDate = pekkuInfo.get(r.sport.toLowerCase());
+      return {
+        day: r.day,
+        start: r.start,
+        end: r.end,
+        sport: `${r.sport} - peruskurssi`,
+        coach: "",
+        hall: "",
+        pekkuStart: startDate ? shortDate(startDate) : undefined,
+      };
+    }),
+  ];
+  const grouped = groupByDay(mergedRows);
+  const showCoach = hasAnyValue(mergedRows, "coach");
+  const showHall = hasAnyValue(mergedRows, "hall");
 
   return (
     <section id="treeniajat" className="section bg-[color:var(--color-bg-soft)]">
@@ -102,6 +136,11 @@ export default async function Treeniajat() {
                       >
                         {row.sport}
                       </span>
+                      {row.pekkuStart && (
+                        <span className="ml-2 whitespace-nowrap text-xs text-[color:var(--color-text-muted)]">
+                          alkaen {row.pekkuStart}
+                        </span>
+                      )}
                     </td>
                     {showCoach && (
                       <td className="px-5 py-4 text-[color:var(--color-text-muted)]">{row.coach}</td>

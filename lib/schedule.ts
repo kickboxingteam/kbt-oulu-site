@@ -215,8 +215,8 @@ export const DAY_ORDER = [
   "Sunnuntai",
 ];
 
-export function groupByDay(rows: ScheduleRow[]): Map<string, ScheduleRow[]> {
-  const map = new Map<string, ScheduleRow[]>();
+export function groupByDay<T extends ScheduleRow>(rows: T[]): Map<string, T[]> {
+  const map = new Map<string, T[]>();
   for (const r of rows) {
     const list = map.get(r.day) ?? [];
     list.push(r);
