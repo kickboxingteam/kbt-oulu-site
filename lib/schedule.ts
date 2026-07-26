@@ -144,13 +144,64 @@ export async function getPeruskurssiInfo(): Promise<Map<string, string>> {
       const cells = parseCsvLine(lines[i]);
       const laji = cells[5]?.trim();
       const date = cells[6]?.trim();
-      if (laji && date) {
+      // Vain päivämäärän näköiset arvot (esim. 18.8. tai 18.8.2026) —
+      // samoissa sarakkeissa on myös peruskurssien viikkoaikataulublokki.
+      if (laji && date && /^\d{1,2}\.\d{1,2}\./.test(date)) {
         map.set(laji.toLowerCase(), date);
       }
     }
     return map;
   } catch {
     return new Map();
+  }
+}
+
+export type PeruskurssiRow = {
+  day: string;
+  start: string;
+  end: string;
+  sport: string;
+};
+
+const DAY_ABBREV: Record<string, string> = {
+  ma: "Maanantai",
+  ti: "Tiistai",
+  ke: "Keskiviikko",
+  to: "Torstai",
+  pe: "Perjantai",
+  la: "Lauantai",
+  su: "Sunnuntai",
+};
+
+const TIME_RE = /^\d{1,2}[:.]\d{2}$/;
+
+export async function getPeruskurssiSchedule(): Promise<PeruskurssiRow[]> {
+  const url = process.env.NEXT_PUBLIC_SCHEDULE_CSV_URL;
+  if (!url) return [];
+
+  try {
+    const res = await fetch(url, { next: { revalidate: 600 } });
+    if (!res.ok) return [];
+    const csv = await res.text();
+    const lines = csv
+      .replace(/\r\n/g, "\n")
+      .split("\n")
+      .filter((l) => l.trim().length > 0);
+    const rows: PeruskurssiRow[] = [];
+    for (let i = 1; i < lines.length; i++) {
+      const cells = parseCsvLine(lines[i]);
+      const dayRaw = cells[5]?.trim().toLowerCase() ?? "";
+      const start = cells[6]?.trim() ?? "";
+      const end = cells[7]?.trim() ?? "";
+      const sport = cells[8]?.trim() ?? "";
+      const day = DAY_ABBREV[dayRaw] ?? (DAY_ORDER.includes(cells[5]?.trim() ?? "") ? cells[5].trim() : "");
+      if (day && TIME_RE.test(start) && TIME_RE.test(end) && sport) {
+        rows.push({ day, start, end, sport });
+      }
+    }
+    return rows;
+  } catch {
+    return [];
   }
 }
 

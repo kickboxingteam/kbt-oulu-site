@@ -1,12 +1,62 @@
 "use client";
 
 import { Fragment } from "react";
-import { GraduationCap, Check, Calendar } from "lucide-react";
+import { GraduationCap, Check, Calendar, Clock } from "lucide-react";
 import { site } from "@/lib/content";
 import { openMaksuModal } from "@/lib/maksuModal";
+import type { PeruskurssiRow } from "@/lib/schedule";
 
-export default function Peruskurssit() {
+const DAY_SHORT: Record<string, string> = {
+  Maanantai: "ma",
+  Tiistai: "ti",
+  Keskiviikko: "ke",
+  Torstai: "to",
+  Perjantai: "pe",
+  Lauantai: "la",
+  Sunnuntai: "su",
+};
+
+type KurssiGroup = {
+  sport: string;
+  startDate?: string;
+  times: string[];
+};
+
+function groupKurssit(
+  rows: PeruskurssiRow[],
+  startDates: Record<string, string>,
+): KurssiGroup[] {
+  const groups = new Map<string, PeruskurssiRow[]>();
+  for (const r of rows) {
+    const list = groups.get(r.sport) ?? [];
+    list.push(r);
+    groups.set(r.sport, list);
+  }
+  return [...groups.entries()].map(([sport, list]) => {
+    // Yhdistä samaan kellonaikaan osuvat päivät: "ti ja to 20:00–21:30"
+    const byTime = new Map<string, string[]>();
+    for (const r of list) {
+      const key = `${r.start}–${r.end}`;
+      const days = byTime.get(key) ?? [];
+      days.push(DAY_SHORT[r.day] ?? r.day.toLowerCase());
+      byTime.set(key, days);
+    }
+    const times = [...byTime.entries()].map(
+      ([time, days]) => `${days.join(" ja ")} ${time}`,
+    );
+    return { sport, startDate: startDates[sport.toLowerCase()], times };
+  });
+}
+
+export default function Peruskurssit({
+  kurssit = [],
+  peruskurssiInfo = {},
+}: {
+  kurssit?: PeruskurssiRow[];
+  peruskurssiInfo?: Record<string, string>;
+}) {
   const pk = site.peruskurssit;
+  const kurssiGroups = groupKurssit(kurssit, peruskurssiInfo);
 
   return (
     <section id="peruskurssit" className="section">
@@ -23,6 +73,39 @@ export default function Peruskurssit() {
             <Calendar aria-hidden="true" size={16} className="mt-0.5 shrink-0" />
             <span>{pk.seasonNote}</span>
           </p>
+        )}
+
+        {kurssiGroups.length > 0 && (
+          <div className="mt-10">
+            <h3 className="text-lg font-semibold text-white">Tulevat peruskurssit</h3>
+            <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {kurssiGroups.map((g) => (
+                <li
+                  key={g.sport}
+                  className="rounded-xl border border-white/10 bg-white/[0.03] p-5"
+                >
+                  <p className="font-semibold text-white">{g.sport}</p>
+                  {g.startDate && (
+                    <p className="mt-2 inline-flex items-center gap-2 text-sm text-[color:var(--color-accent)]">
+                      <Calendar aria-hidden="true" size={14} className="shrink-0" />
+                      Alkaa {g.startDate}
+                    </p>
+                  )}
+                  <ul className="mt-3 flex flex-col gap-1.5">
+                    {g.times.map((t) => (
+                      <li
+                        key={t}
+                        className="inline-flex items-center gap-2 text-sm text-[color:var(--color-text-muted)]"
+                      >
+                        <Clock aria-hidden="true" size={14} className="shrink-0" />
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
