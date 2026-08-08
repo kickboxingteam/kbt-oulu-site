@@ -66,7 +66,15 @@
         "Laji antaa erinomaisen pohjan kamppailulajeihin ja sopii hyvin myös kuntoharjoitteluun. Treeneissä kehittyvät erityisesti kestävyys, räjähtävyys, koordinaatio, tasapaino ja itsevarmuus.",
         "Sopii sinulle, jos haluat selkeän, tehokkaan ja fyysisen kamppailulajin, jossa pääset nopeasti tekemisen makuun."
       ],
-      "images": ["/images/photos/voitto.jpg", "/images/photos/voittaja3.jpg"],
+      "images": [
+        "/images/photos/kb-keha.jpg",
+        "/images/photos/kb-sparri.jpg",
+        "/images/photos/kb-sparri2.jpg",
+        "/images/photos/kb-junnut.jpg",
+        "/images/photos/kb-keha2.jpg",
+        "/images/photos/voitto.jpg",
+        "/images/photos/voittaja3.jpg"
+      ],
       "keyFacts": [
         { "label": "Sopii", "value": "Aikuisille ja junnuille (12 v +)" },
         { "label": "Painopiste", "value": "Lyönnit ja potkut" },

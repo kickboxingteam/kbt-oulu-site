@@ -1,6 +1,5 @@
 import { Wallet, ExternalLink } from "lucide-react";
 import { site } from "@/lib/content";
-import YouTubeFacade from "./YouTubeFacade";
 
 export default function Aloita() {
   const a = site.aloita;
@@ -44,15 +43,6 @@ export default function Aloita() {
             </li>
           ))}
         </ol>
-
-        <div className="mt-12 max-w-2xl">
-          <YouTubeFacade
-            videoId="n1Mnl_gNQbg"
-            title="Tule mukaan — Kickboxing Team Oulu"
-            thumbnail="/images/videos/tulemukaan.jpg"
-            duration="0:24"
-          />
-        </div>
       </div>
     </section>
   );
