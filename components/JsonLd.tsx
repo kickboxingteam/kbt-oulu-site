@@ -33,7 +33,7 @@ export default function JsonLd() {
     },
     telephone: site.contact.phoneTel,
     email: site.contact.email,
-    sameAs: [site.social.instagram, site.social.facebook].filter(Boolean),
+    sameAs: [site.social.instagram, site.social.facebook, site.social.youtube].filter(Boolean),
     sport: site.lajit.map((l) => l.name),
     areaServed: {
       "@type": "City",

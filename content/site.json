@@ -28,7 +28,9 @@
     "instagram": "https://www.instagram.com/kickboxingteam/",
     "instagramHandle": "@kickboxingteam",
     "facebook": "https://www.facebook.com/KBToulu",
-    "twitter": "https://twitter.com/kickboxingteam"
+    "twitter": "https://twitter.com/kickboxingteam",
+    "youtube": "https://www.youtube.com/@KickboxingTeamOulu",
+    "youtubeHandle": "@KickboxingTeamOulu"
   },
   "lajit": [
     {
@@ -109,7 +111,6 @@
         "Sopii sinulle, jos haluat fyysisen ja teknisen mattolajin, jossa paini ja lopetukset yhdistyvät."
       ],
       "images": ["/images/photos/paini.jpg", "/images/photos/paini2.jpg"],
-      "videos": ["/videos/lukkopaini.mp4"],
       "keyFacts": [
         { "label": "Sopii", "value": "MMA-täydennykseen ja kilpailijoille" },
         { "label": "Painopiste", "value": "Sidonnat, kaadot ja lukot (no-gi)" },

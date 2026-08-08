@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Instagram, Facebook, Mail } from "lucide-react";
+import { Instagram, Facebook, Youtube, Mail } from "lucide-react";
 import { site } from "@/lib/content";
 
 export default function Footer() {
@@ -47,6 +47,17 @@ export default function Footer() {
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-white/10"
               >
                 <Facebook aria-hidden="true" size={18} />
+              </a>
+            </li>
+            <li>
+              <a
+                href={site.social.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-white/10"
+              >
+                <Youtube aria-hidden="true" size={18} />
               </a>
             </li>
             <li>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowRight, MapPin, Calendar } from "lucide-react";
 import { site } from "@/lib/content";
+import YouTubeLightbox from "./YouTubeLightbox";
 
 export default function Hero() {
   return (
@@ -49,6 +50,12 @@ export default function Hero() {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--color-bg)] via-transparent to-transparent" />
+            <YouTubeLightbox
+              videoId="JdIADYhPqq8"
+              title="Kickboxing Team Oulu — esittelyvideo"
+              label="Katso video"
+              className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/60 py-1.5 pl-1.5 pr-4 text-sm font-medium text-white backdrop-blur transition hover:bg-black/80"
+            />
           </div>
         </div>
       </div>

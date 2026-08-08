@@ -11,6 +11,7 @@ import {
   ExternalLink,
   ArrowRight,
   Calendar,
+  Youtube,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { site } from "@/lib/content";
@@ -194,17 +195,28 @@ export default function LajiModal({
             )}
 
             <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6">
-              {laji.federation && (
+              <div className="flex flex-col gap-2">
+                {laji.federation && (
+                  <a
+                    href={laji.federation.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-[color:var(--color-accent)] hover:underline"
+                  >
+                    Lue lisää: {laji.federation.name}
+                    <ExternalLink aria-hidden="true" size={14} />
+                  </a>
+                )}
                 <a
-                  href={laji.federation.url}
+                  href={site.social.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium text-[color:var(--color-accent)] hover:underline"
                 >
-                  Lue lisää: {laji.federation.name}
-                  <ExternalLink aria-hidden="true" size={14} />
+                  <Youtube aria-hidden="true" size={16} />
+                  Lisää videoita YouTubessa
                 </a>
-              )}
+              </div>
 
               <a
                 href="#treeniajat"

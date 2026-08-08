@@ -127,6 +127,8 @@ export type SiteContent = {
     instagramHandle: string;
     facebook: string;
     twitter: string;
+    youtube: string;
+    youtubeHandle: string;
   };
   lajit: Laji[];
   valmentajat: Valmentaja[];

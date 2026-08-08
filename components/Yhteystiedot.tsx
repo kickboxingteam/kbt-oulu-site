@@ -1,4 +1,4 @@
-import { Mail, Phone, Instagram } from "lucide-react";
+import { Mail, Phone, Instagram, Youtube } from "lucide-react";
 import { site } from "@/lib/content";
 
 export default function Yhteystiedot() {
@@ -14,7 +14,7 @@ export default function Yhteystiedot() {
           ensimmäistä treeniäsi — saat sen sähköpostilla tai puhelimitse.
         </p>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           <a
             href={`mailto:${site.contact.email}`}
             className="card flex items-start gap-3 hover:bg-white/[0.05]"
@@ -73,6 +73,28 @@ export default function Yhteystiedot() {
               </span>
               <span className="mt-1 block text-sm font-medium text-white">
                 {site.social.instagramHandle}
+              </span>
+            </span>
+          </a>
+
+          <a
+            href={site.social.youtube}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card flex items-start gap-3 hover:bg-white/[0.05]"
+          >
+            <span
+              aria-hidden="true"
+              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[color:var(--color-accent)]/15 text-[color:var(--color-accent)]"
+            >
+              <Youtube size={18} />
+            </span>
+            <span>
+              <span className="block text-xs uppercase tracking-wider text-[color:var(--color-text-muted)]">
+                YouTube
+              </span>
+              <span className="mt-1 block text-sm font-medium text-white">
+                {site.social.youtubeHandle}
               </span>
             </span>
           </a>
