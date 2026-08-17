@@ -72,6 +72,7 @@
         "/images/photos/kb-sparri2.jpg",
         "/images/photos/kb-junnut.jpg",
         "/images/photos/kb-keha2.jpg",
+        "/images/photos/kb-opetus.jpg",
         "/images/photos/voitto.jpg",
         "/images/photos/voittaja3.jpg"
       ],
@@ -96,7 +97,15 @@
         "BJJ ei perustu pelkkään voimaan, vaan tekniikkaan, ajoitukseen ja kehonkäyttöön. Siksi se sopii monen kokoisille ja eri lähtötasoilta tuleville harrastajille. Laji kehittää liikkuvuutta, kehonhallintaa, kärsivällisyyttä ja taktista ajattelua.",
         "Sopii sinulle, jos pidät teknisestä harjoittelusta ja haluat oppia hallitsemaan tilanteita matossa."
       ],
-      "images": ["/images/photos/bjj.jpg", "/images/photos/paini3.jpg"],
+      "images": [
+        "/images/photos/bjj-heitto.jpg",
+        "/images/photos/bjj-matto.jpg",
+        "/images/photos/bjj-kaato.jpg",
+        "/images/photos/bjj-valmennus.jpg",
+        "/images/photos/bjj-ryhma.jpg",
+        "/images/photos/bjj.jpg",
+        "/images/photos/paini3.jpg"
+      ],
       "keyFacts": [
         { "label": "Sopii", "value": "Kaikille tasoille, painopiste tekniikassa" },
         { "label": "Painopiste", "value": "Sidonnat ja lukot, gi ja no-gi" },
@@ -118,7 +127,11 @@
         "Lukkopaini on tehokas oma lajinsa, mutta se tukee erinomaisesti myös MMA-harjoittelua. Ilman pukua tempo on usein nopeampi, ja harjoittelu kehittää erityisesti reagointia, painetta, otteista vapautumista ja koko kehon käyttöä.",
         "Sopii sinulle, jos haluat fyysisen ja teknisen mattolajin, jossa paini ja lopetukset yhdistyvät."
       ],
-      "images": ["/images/photos/paini.jpg", "/images/photos/paini2.jpg"],
+      "images": [
+        "/images/photos/paini.jpg",
+        "/images/photos/sw-nogi.jpg",
+        "/images/photos/paini2.jpg"
+      ],
       "keyFacts": [
         { "label": "Sopii", "value": "MMA-täydennykseen ja kilpailijoille" },
         { "label": "Painopiste", "value": "Sidonnat, kaadot ja lukot (no-gi)" },
