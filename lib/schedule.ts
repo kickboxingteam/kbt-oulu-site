@@ -89,7 +89,10 @@ function parseCsv(csv: string): ScheduleRow[] {
       coach: indices.coach !== undefined ? cells[indices.coach] ?? "" : "",
       hall: indices.hall !== undefined ? cells[indices.hall] ?? "" : "",
     };
-    if (row.day && row.start) rows.push(row);
+    // Vain täydet viikonpäivännimet kelpaavat — taulukon alle voi näin
+    // parkkeerata rivejä (esim. pekkublokin kopion päivälyhenteillä)
+    // ilman että ne vuotavat sivun viikkoaikatauluun.
+    if (DAY_ORDER.includes(row.day) && row.start) rows.push(row);
   }
   return rows;
 }
