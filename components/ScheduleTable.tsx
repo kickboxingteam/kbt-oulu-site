@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { groupByDay, DAY_ORDER, type ScheduleRow } from "@/lib/schedule";
 
 export type ScheduleTableRow = ScheduleRow & {
@@ -89,80 +89,107 @@ export default function ScheduleTable({
         <caption className="sr-only">Viikon harjoitusajat lajeittain</caption>
         <thead className="bg-white/[0.04] text-xs uppercase tracking-wider text-[color:var(--color-text-muted)]">
           <tr>
-            <th scope="col" className="px-5 py-4 font-semibold">Päivä</th>
-            <th scope="col" className="px-5 py-4 font-semibold">Aika</th>
-            <th scope="col" className="px-5 py-4 font-semibold">Laji</th>
+            <th scope="col" className="hidden px-5 py-4 font-semibold sm:table-cell">Päivä</th>
+            <th scope="col" className="px-4 py-3 font-semibold sm:px-5 sm:py-4">Aika</th>
+            <th scope="col" className="px-4 py-3 font-semibold sm:px-5 sm:py-4">Laji</th>
             {showCoach && (
-              <th scope="col" className="px-5 py-4 font-semibold">Ohjaaja</th>
+              <th scope="col" className="px-4 py-3 font-semibold sm:px-5 sm:py-4">Ohjaaja</th>
             )}
             {showHall && (
-              <th scope="col" className="px-5 py-4 font-semibold">Sali</th>
+              <th scope="col" className="px-4 py-3 font-semibold sm:px-5 sm:py-4">Sali</th>
             )}
           </tr>
         </thead>
         <tbody className="divide-y divide-white/5">
-          {[...grouped.entries()].flatMap(([day, dayRows]) =>
-            dayRows.map((row, idx) => {
-              const isToday = day === todayName;
-              const status = statusFor(row, day);
-              return (
-                <tr
-                  key={`${day}-${idx}`}
-                  className={`text-sm ${isToday ? "bg-white/[0.04]" : ""}`}
-                >
-                  <th scope="row" className="px-5 py-4 font-semibold text-white">
-                    {idx === 0 ? (
-                      <span className="inline-flex items-center gap-2">
-                        {day}
-                        {isToday && (
-                          <span className="rounded-full border border-[color:var(--color-accent)]/40 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-[color:var(--color-accent)]">
-                            tänään
+          {[...grouped.entries()].map(([day, dayRows]) => {
+            const isToday = day === todayName;
+            const todayBadge = isToday && (
+              <span className="rounded-full border border-[color:var(--color-accent)]/40 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-[color:var(--color-accent)]">
+                tänään
+              </span>
+            );
+            return (
+              <Fragment key={day}>
+                {/* Puhelimella päivä omana otsikkorivinään, jotta aika ja laji mahtuvat leveyteen. */}
+                <tr className={`border-b-0 sm:hidden ${isToday ? "bg-white/[0.04]" : ""}`}>
+                  <th
+                    scope="colgroup"
+                    colSpan={3 + (showCoach ? 1 : 0) + (showHall ? 1 : 0)}
+                    className="px-4 pb-1 pt-4 text-sm font-semibold text-white"
+                  >
+                    <span className="inline-flex items-center gap-2">
+                      {day}
+                      {todayBadge}
+                    </span>
+                  </th>
+                </tr>
+                {dayRows.map((row, idx) => {
+                  const status = statusFor(row, day);
+                  return (
+                    <tr
+                      key={`${day}-${idx}`}
+                      className={`text-sm ${isToday ? "bg-white/[0.04]" : ""}`}
+                    >
+                      <th
+                        scope="row"
+                        className="hidden px-5 py-4 font-semibold text-white sm:table-cell"
+                      >
+                        {idx === 0 ? (
+                          <span className="inline-flex items-center gap-2">
+                            {day}
+                            {todayBadge}
+                          </span>
+                        ) : (
+                          <span className="sr-only">{day}</span>
+                        )}
+                      </th>
+                      <td className="px-4 py-3 align-top tabular-nums text-[color:var(--color-text-muted)] sm:px-5 sm:py-4 sm:align-middle">
+                        <span className="whitespace-nowrap">
+                          {row.start}–{row.end}
+                        </span>
+                        {status === "ongoing" && (
+                          <span className="mt-1 flex items-center gap-1.5 whitespace-nowrap text-xs font-medium text-[color:var(--color-accent)] sm:ml-2 sm:mt-0 sm:inline-flex">
+                            <span aria-hidden="true" className="relative flex h-2 w-2">
+                              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[color:var(--color-accent)] opacity-60" />
+                              <span className="relative inline-flex h-2 w-2 rounded-full bg-[color:var(--color-accent)]" />
+                            </span>
+                            käynnissä
                           </span>
                         )}
-                      </span>
-                    ) : (
-                      <span className="sr-only">{day}</span>
-                    )}
-                  </th>
-                  <td className="px-5 py-4 tabular-nums text-[color:var(--color-text-muted)]">
-                    {row.start}–{row.end}
-                    {status === "ongoing" && (
-                      <span className="ml-2 inline-flex items-center gap-1.5 whitespace-nowrap text-xs font-medium text-[color:var(--color-accent)]">
-                        <span aria-hidden="true" className="relative flex h-2 w-2">
-                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[color:var(--color-accent)] opacity-60" />
-                          <span className="relative inline-flex h-2 w-2 rounded-full bg-[color:var(--color-accent)]" />
+                        {status === "next" && (
+                          <span className="mt-1 block whitespace-nowrap text-xs text-[color:var(--color-text-muted)] sm:ml-2 sm:mt-0 sm:inline">
+                            seuraavaksi
+                          </span>
+                        )}
+                      </td>
+                      <td className="px-4 py-3 sm:px-5 sm:py-4">
+                        <span
+                          className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${colorFor(row.sport)}`}
+                        >
+                          {row.sport}
                         </span>
-                        käynnissä
-                      </span>
-                    )}
-                    {status === "next" && (
-                      <span className="ml-2 whitespace-nowrap text-xs text-[color:var(--color-text-muted)]">
-                        seuraavaksi
-                      </span>
-                    )}
-                  </td>
-                  <td className="px-5 py-4">
-                    <span
-                      className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${colorFor(row.sport)}`}
-                    >
-                      {row.sport}
-                    </span>
-                    {row.pekkuStart && (
-                      <span className="ml-2 whitespace-nowrap text-xs text-[color:var(--color-text-muted)]">
-                        alkaen {row.pekkuStart}
-                      </span>
-                    )}
-                  </td>
-                  {showCoach && (
-                    <td className="px-5 py-4 text-[color:var(--color-text-muted)]">{row.coach}</td>
-                  )}
-                  {showHall && (
-                    <td className="px-5 py-4 text-[color:var(--color-text-muted)]">{row.hall}</td>
-                  )}
-                </tr>
-              );
-            }),
-          )}
+                        {row.pekkuStart && (
+                          <span className="ml-2 whitespace-nowrap text-xs text-[color:var(--color-text-muted)]">
+                            alkaen {row.pekkuStart}
+                          </span>
+                        )}
+                      </td>
+                      {showCoach && (
+                        <td className="px-4 py-3 text-[color:var(--color-text-muted)] sm:px-5 sm:py-4">
+                          {row.coach}
+                        </td>
+                      )}
+                      {showHall && (
+                        <td className="px-4 py-3 text-[color:var(--color-text-muted)] sm:px-5 sm:py-4">
+                          {row.hall}
+                        </td>
+                      )}
+                    </tr>
+                  );
+                })}
+              </Fragment>
+            );
+          })}
         </tbody>
       </table>
     </div>
